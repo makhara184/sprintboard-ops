@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SprintBoard Ops — Project Milestones & RAID Log</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>SprintBoard Ops</h1>
+        <p>Project Operations Dashboard &bull; Milestones + RAID Log</p>
+      </div>
+      <button class="btn primary" id="exportMdBtn">Copy Markdown Status Report</button>
+    </header>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Project Milestones</h2>
+        <form id="msForm" class="inline-form">
+          <input id="msTitle" placeholder="Milestone name" required />
+          <input id="msOwner" placeholder="Owner" required />
+          <input id="msDue" type="date" required />
+          <button class="btn primary" type="submit">Add</button>
+        </form>
+        <div id="msList" class="list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>RAID Log (Risks, Assumptions, Issues, Dependencies)</h2>
+        <form id="raidForm" class="inline-form">
+          <select id="raidType">
+            <option>Risk</option>
+            <option>Assumption</option>
+            <option>Issue</option>
+            <option>Dependency</option>
+          </select>
+          <input id="raidDesc" placeholder="Description & mitigation" required />
+          <select id="raidSeverity">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+          </select>
+          <button class="btn primary" type="submit">Log</button>
+        </form>
+        <div id="raidList" class="list"></div>
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
